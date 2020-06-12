@@ -75,7 +75,7 @@ namespace ProductDemoApp.Controllers
                 if (product.Name.ToLower() == Name.ToLower())
                 {
                     
-                    return Json($"{Name} already exist.");
+                    return Json($"{Name} already exist"); 
                 }
             }
             return Json(true);

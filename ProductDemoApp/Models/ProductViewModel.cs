@@ -14,7 +14,7 @@ namespace ProductDemoApp.Models
     {
         [Required(ErrorMessage = "Please enter product name.")]
         [DisplayName("Name")]
-        [Remote(action: "IsProductExist", controller: "Product")]
+        [Remote(action: "IsProductExist", controller: "Product")] 
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please enter price.")]
