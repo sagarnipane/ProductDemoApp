@@ -19,7 +19,7 @@ namespace ProductDemoApp.Service
         {
             products = new List<Product>(); 
             //When the first time service is invoked Existing data from JSON file is retrieved
-            path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"Data\\Products.json"}");
+            path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\Data\\Products.json");
             JSON = System.IO.File.ReadAllText(path);
             products= JsonConvert.DeserializeObject<List<Product>>(JSON);
         }
@@ -28,6 +28,7 @@ namespace ProductDemoApp.Service
         {
             if(product != null)
             {
+               
                 this.products.Add(product);
                 return true;
             }

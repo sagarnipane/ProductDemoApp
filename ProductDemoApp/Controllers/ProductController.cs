@@ -33,7 +33,8 @@ namespace ProductDemoApp.Controllers
             {
                 if (product != null)
                 {
-                    flag= productService.AddProduct(product);
+                    
+                    flag = productService.AddProduct(product);
                 }
                 if (flag)
                 {
@@ -65,6 +66,19 @@ namespace ProductDemoApp.Controllers
             {
                 return Json("Expiry Date must be greater than Today's Date.");
             }
+        }
+
+        public IActionResult IsProductExist(string Name)
+        {
+            foreach (var product in productService.GetAllProducts())
+            {
+                if (product.Name.ToLower() == Name.ToLower())
+                {
+                    
+                    return Json($"{Name} already exist.");
+                }
+            }
+            return Json(true);
         }
     }
 }
